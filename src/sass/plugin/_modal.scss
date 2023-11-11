@@ -1,0 +1,114 @@
+@use "global" as *;
+
+body {
+  margin: 0;
+}
+#modal-1 {
+  display: none;
+}
+#modal-1.is-open {
+  display: block;
+}
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.80);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__container {
+  background-color: #fff;
+  padding: rem(20); 
+  width: rem(500);  
+  overflow-y: auto;  
+}
+
+.modal__close-btn {
+  display: flex;
+  justify-content: end;
+}
+
+.batsu {
+  display: block;
+  position: relative;
+  width: rem(21);
+  height: rem(21);
+}
+ 
+.batsu::before, .batsu::after { /* 共通設定 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px; /* 棒の幅（太さ） */
+  height: 30px; /* 棒の高さ */
+  background: #333;
+}
+ 
+.batsu::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+ 
+.batsu::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+
+
+.modal__title {
+  margin-top: rem(28);
+  text-align: center;
+  color: $black;  
+  font-size: rem(24);
+  font-weight: $bold;
+  line-height: calc(36 /24); /* 36px */
+}
+
+.modal__form-item {
+  margin-top: rem(30);
+  color: #606266;  
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: calc(21/ 14); /* 21px */
+}
+
+.modal__form-box {
+  margin-top: rem(8);
+  padding: rem(8) rem(30);
+  border-radius: rem(4);
+  border: 1px solid #DCDFE6;
+  width: 100%;
+  height: rem(40);
+}
+
+.modal__close-item {
+  margin-top: rem(22);
+  text-align: center;
+}
+
+.modal__close {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px;
+  margin: 16px auto 0;  
+  background: #1E5099;
+  color: white;
+}
+
+.modal__signUp {
+  margin-top: rem(48);
+  color: #448AFF;
+  text-align: right;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: calc(21/ 14); /* 21px */
+}
+
+

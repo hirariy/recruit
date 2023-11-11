@@ -1,0 +1,86 @@
+@use "global" as *;
+
+.p-message {
+  position: relative;
+}
+
+.p-message .c-section-header__entitle {
+  width: rem(48);
+}
+
+.p-message__content {
+  margin-top: rem(69);
+  background-image: url(../../assets/images/common/seo-message-sp.jpg);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat; 
+  @include mq(md) {
+    background-image: url(../../assets/images/common/ceo-message.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: rem(92);
+  }
+}
+
+.p-message__inner {
+  padding: rem(23) 0;
+}
+
+.p-message__title {
+  color: $black;  
+  font-size: rem(20);
+  font-weight: $normal;
+  line-height: calc(58/ 40);
+  letter-spacing: 0.05em;
+  padding-top: rem(200);
+  @include mq(md) {
+    font-size: rem(32);
+    font-weight: $bold;
+  }
+}
+
+
+
+.p-message__text {
+  margin-top: rem(30);
+  color: $black;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: calc(36.8/ 16); /* 36.8px */
+  letter-spacing: 0.05em;
+}
+
+.p-message__ceo-name {
+  background: $white;
+  position: absolute;
+  top: rem(197);
+  left: 0;
+  padding: rem(16);
+  @include mq(md) {  
+    position: absolute;
+    top: auto; 
+    left: auto;
+    bottom: rem(53);
+    right: 0;
+    padding: rem(16) rem(116) rem(21) rem(26);
+  }
+}
+
+.ceo {
+  color: $black; 
+  font-size: rem(12);  
+  font-weight: $normal;
+  line-height: calc(26/ 18);
+  letter-spacing: 0.05em;
+  @include mq(md) {
+    font-size: rem(18);  
+  }
+}
+
+.name {
+  margin-top: rem(20);
+  width: rem(100);
+  @include mq(md) {
+    width: rem(156);
+  }
+}

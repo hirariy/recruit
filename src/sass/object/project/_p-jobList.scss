@@ -1,0 +1,43 @@
+@use "global" as *;
+
+
+.p-jobList .c-section-header__entitle {
+  width: rem(56);
+}
+
+.p-jobList__info {
+  text-align: center;
+  color: $black; 
+  font-size: rem(13);
+  font-weight: $normal;
+  line-height: calc(23/ 16);
+  margin-top: rem(43);  
+  @include mq(md) {
+    font-size: rem(16);
+  }
+}
+
+.p-jobList__contain {
+  background: #F9F9F9;
+  // width: 100%;
+  // margin-left: calc(50%-50vw);
+  margin-top: rem(30);
+  padding-top: rem(50);
+  @include mq(md) {
+    margin-top: rem(69);
+  }
+}
+
+.p-jobList__cards {  
+   display: grid; 
+   grid-template-columns: repeat(1, 1fr);
+  @include mq(md) {     
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(88) rem(98); 
+    margin-inline: auto; 
+    padding: rem(58) rem(58) rem(216);
+   
+  } 
+}
+
+

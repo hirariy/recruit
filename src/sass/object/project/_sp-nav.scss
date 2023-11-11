@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.sp-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $bg-orange;
+}
+.sp-nav.is-active {
+  display: block;  
+}
+
+.sp-nav__logo {
+  text-align: center;
+  padding: rem(10) rem(10);
+}
+
+.sp-nav .c-logo {
+  display: inline-block;
+  display: flex;  
+}
+
+
+.sp-nav__logo .c-logo__textlogos {
+  color: $white;
+ 
+}
+
+
+.sp-nav__items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: rem(50);
+}
+
+.sp-nav__item {
+  width: 100%;  
+}
+
+.sp-nav__item a{  
+  text-align: center;
+  display: block;
+  padding: rem(10) 0;
+  color: $white;  
+  font-size: rem(15);
+  font-weight: $bold;
+  line-height: 1;
+  letter-spacing: 0.05em
+}
+
+.sp-nav__btns {
+  display: block;
+  text-align: center; 
+  margin-top: rem(16); 
+}
+
+.sp-nav__btns .p-nav__button {
+  padding-top: rem(20); 
+}
+
+.sp-nav__btns .c-button {
+  border: 3px solid $white;
+  padding: rem(16) 0;
+}

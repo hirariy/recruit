@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.c-button {
+  text-align: center;
+  display: inline-block;
+  color:$white; 
+  font-size: rem(13);
+  font-weight: $normal;   
+  text-transform: uppercase;  
+  background: $orange;
+  line-height: calc(18/ 13);
+  letter-spacing: 0.05em;
+  width: rem(180);
+  padding: rem(23) 0;
+  border-radius: rem(30);
+}
+
+.color-light {
+  background: $bg-orange;
+}

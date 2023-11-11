@@ -1,0 +1,77 @@
+@use "global" as *;
+
+.p-mission {
+  background-image: url('../../assets/images/common/mission-bg.jpg');
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat; 
+}
+
+
+.p-mission .c-section-header__entitle {
+  width: rem(98);
+}
+
+
+.p-mission__contents {
+  margin-top: rem(70);
+  padding-bottom: rem(108);   
+  @include mq(md) {
+    margin-top: rem(132);
+    padding-bottom: rem(262); 
+  }
+}
+
+.p-mission__vision {   
+  margin-top: rem(70);
+  @include mq(md) {    
+    text-align: right;
+    margin-top: rem(111); 
+  } 
+}
+
+.p-mission__mission .p-mission__title {
+  width: rem(110);
+  @include mq(md) {
+    width: rem(137);
+  }
+}
+
+.p-mission__vision .p-mission__title {
+  width: rem(100);
+  display: inline-block;
+  @include mq(md) {
+    width: rem(115);
+  }
+}
+
+.p-mission__texts {
+  margin-top: rem(16); 
+  @include mq(md) {
+    margin-top: rem(25); 
+  }
+}
+
+.p-mission__copy {
+  color: $black;
+  font-size: rem(18);
+  font-weight: $bold;
+  line-height: calc(36/ 24);
+  letter-spacing: 0.05em;
+  @include mq(md) {
+    font-size: rem(24);
+  }
+}
+
+.p-mission__copy-text {
+  color: $black;
+  font-size: rem(13); 
+  font-weight: $normal;
+  line-height: calc(40/ 16); /* 40px */
+  letter-spacing: 0.05em;
+  margin-top: rem(16);
+  @include mq(md) {
+    font-size: rem(16); 
+    margin-top: rem(25);
+  }
+}
