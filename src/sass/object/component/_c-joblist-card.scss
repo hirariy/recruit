@@ -6,9 +6,11 @@
   position: relative;
   margin-bottom: rem(66);
   margin-right: rem(10);
-  // @include mq(md) {
-  //   padding: 30px;    
-  // } 
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  width: 100%; // カードの幅を100%に設定
+  @include mq(md) {
+    margin-right: 0;
+  } 
 
   }
           
@@ -51,11 +53,15 @@
 
 .c-jobList-card-body {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background: $white;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
     height: rem(100);
-    
+    padding-right: rem(15);
+    @include mq(md) {
+      padding-right: rem(20);
+    }
   }
 
 .c-jobList-card__text {

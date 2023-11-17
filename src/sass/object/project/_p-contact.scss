@@ -1,0 +1,178 @@
+@use "global" as *;
+
+.p-contact {
+  background: #F6F3EC;  
+  padding: rem(72) rem(30) rem(75);    
+  @include mq(md) {
+    padding: rem(72) rem(154) rem(75);
+  }  
+}
+
+.p-contact__container {
+  background: $white;  
+  border-radius: rem(15);
+  padding-bottom: rem(126);
+}
+
+.p-contact__inner {
+  @include mq(md) {
+    padding: 0 rem(100);
+  }
+  
+}
+
+.p-contact__header {
+  padding-top: rem(50);
+  @include mq(md) {
+    padding-top: rem(98);
+  }
+}
+
+.p-contact__title {
+  color: #333;  
+  font-size: rem(24);  
+  font-weight: $normal;
+  line-height: calc(52/ 36);
+  letter-spacing: 0.05em;
+  @include mq(md) {
+    font-size: rem(36);  
+  }
+}
+
+.title-orange {
+  color: #FF8A00;
+}
+
+.p-contact__text {
+  margin-top: rem(48);
+  color: #333;  
+  font-size: rem(12);  
+  font-weight: $normal;
+  line-height: calc(37.8/ 14);
+  letter-spacing: 0.05em;
+  @include mq(md) {
+    font-size: rem(14);  
+  }
+}
+
+.p-contact__form {
+  margin-top: rem(58);
+}
+
+.p-contact__items {
+  @include mq(md) {
+    display: flex;    
+    align-items: center;
+    margin-top: rem(78);
+  }
+}
+
+.p-contact__items.item-top {
+  align-items: flex-start;
+  padding-top: rem(7);
+}
+
+.p-contact__item {
+  margin-top: rem(25);
+  @include mq(md) {
+    width: rem(252);
+    margin-top: 0;
+  };
+}
+
+.bg-color {
+  background: $orange;   
+  padding: rem(7) rem(9);
+  color: $white;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: 1; /* 14px */
+}
+
+.bg-color.color-gray {
+  color: #909090;; 
+  background: #DDD;
+}
+
+.p-contact__item label {
+  margin-left: rem(15);
+}
+
+.p-contact__item-form {
+  max-width:rem(466);
+  width: 100%;
+  display: inline-block;
+  margin-top: rem(15);
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.p-contact__item-form p {
+  color: #333;
+  font-size: rem(12);
+  font-weight: $normal;
+  line-height: calc(18/ 12); /* 18px */
+  margin-bottom: rem(25);
+}
+
+.radio-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-contact__item-form .short-form {
+  width: 50%;
+}
+
+input::placeholder {
+  color: #C1C1C1;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: calc(16/ 16); /* 16px */
+}
+
+.p-contact__form-footer {
+  margin-top: rem(49);
+  text-align: center;
+}
+
+.check-item {
+  color: #333;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: calc(21/ 14); /* 21px */
+}
+
+.p-contact__form-btn {
+  margin-top: rem(48); 
+  display: flex;
+  justify-content: center;
+}
+
+.p-contact__button {  
+  align-items: center;
+  display: inline-block;
+  display: flex;
+  justify-content: space-evenly;
+  flex-shrink: 0;
+  width: 100%;
+  color:$white; 
+  font-size: rem(14);
+  font-weight: $normal;  
+  line-height: calc(26/ 18);
+  letter-spacing: 0.05em;
+  width: rem(260);
+  padding: rem(22) 0;
+  border-radius: 42px;
+  background: #FF8A00;   
+  @include mq(md) {
+    font-size: rem(18);
+    width: rem(330);
+    padding: rem(29) 0;
+  }
+}
+
+.p-contact__button img {
+  width: rem(16);
+}

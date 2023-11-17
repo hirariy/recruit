@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.l-contant {
+  margin-top: rem(20);
+  @include mq(md) {
+    margin-top: rem(100);
+  }
+ 
+}

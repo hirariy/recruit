@@ -2,22 +2,31 @@
 
 
 .slide {
-  position: relative;
+  position: relative;  
   width: 100%;
-  max-width: rem(1440);
-  height: rem(705);
-  overflow: hidden;
+  height: rem(655);
+  margin: 0 0 0 rem(56); 
+  overflow: hidden;  
+    @include mq(md) {    
+    width: 90%;
+    height: rem(705);
+    margin: 0 0 0 rem(318); 
+    left: 30%; /* 中央揃えのために変更 */
+    transform: translateX(-30%); /* 中央揃えのために変更 */
+  }
 }
+
 .slide-image {
-  text-align: right;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  margin: 0 auto rem(30); 
+  aspect-ratio: 1122 /705; 
+  overflow: hidden; 
   opacity: 0;
-  animation: slider-1 24s linear infinite;
+  animation: slider-1 24s linear infinite;  
+  object-fit: cover;
 
   &:nth-child(1) {    
     animation-delay: -2s;
@@ -52,24 +61,28 @@
   }
 }
 
-.fv {
-  position: relative;
-}
-.fv-copy {
+.p-mv__images::after {
+  content: " ";
   position: absolute;
-  writing-mode: vertical-rl;
-  font-size: 34px;
-  font-weight: bold;
-  color: #FFFFFF;
-  z-index: 1;
-  letter-spacing: 0.35em;
-  line-height: 1.24;
-  &-01 {
-    top: 362px;
-    right: 508px;
-  }
-  &-02 {
-    top: 362px;
-    right: 593px;
+  right: rem(51);
+  bottom: rem(-240);
+  width: 100%;
+  // height: rem(575);
+  height: rem(655);
+  background: linear-gradient(180deg, #FF8A00 0%, #FFB800 99.98%);
+  z-index: -1;
+  overflow-x: hidden;
+  @include mq(md) {
+    bottom: rem(-177);
+    height: rem(655);
   }
 }
+
+.slide-copy {
+  position: relative;
+  width: rem(587);
+  z-index: 1;   
+  bottom: rem(329);
+  right: rem(567);   
+}
+

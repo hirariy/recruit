@@ -15,6 +15,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }
   });
 
+
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.p-header');
+    const headerHeight = header.offsetHeight; // ヘッダーの高さを取得
+    const scrollY = window.pageYOffset;
+    
+    if (scrollY >= 100) {
+      header.classList.add('header--sticky');
+      document.body.style.marginTop = headerHeight + 'px'; // コンテンツにヘッダーの高さ分の余白を設定
+    } else {
+      header.classList.remove('header--sticky');
+      document.body.style.marginTop = '0'; // コンテンツの余白をリセット
+    }
+  });
+
   // ヘッダークラスの付与
   let header = $('.p-header');
   let headerHeight = $('.p-header').height();
@@ -26,6 +41,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       header.removeClass('is-color');
     }  
   });
+
+  $(document).ready(function () {
+    // Ensure the DOM is ready before executing the script
+  
+    let header = $('.p-header');
+    let headerHeight = header.height(); // Use the variable directly
+    let height = $('.p-mv').height();
+  
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > height - headerHeight) {
+        header.addClass('is-color');
+      } else {
+        header.removeClass('is-color');
+      }
+    });
+  });
+  
 
   // モーダル
 
@@ -93,5 +125,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   // });
 });
 
+// 横スクロールをチェックする
 
-
+const width = document.documentElement.clientWidth
+ $$("*").forEach(el => {
+  el.style.outline = '1px solid tomato'
+  if (width < el.clientWidth) console.log(el)
+})
