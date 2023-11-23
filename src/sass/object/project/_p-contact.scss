@@ -163,16 +163,38 @@ input::placeholder {
   line-height: calc(26/ 18);
   letter-spacing: 0.05em;
   width: rem(260);
-  padding: rem(22) 0;
+  padding: rem(22) rem(34);
   border-radius: 42px;
-  background: #FF8A00;   
+  // background: #FF8A00;   
+  background: gray;
   @include mq(md) {
     font-size: rem(18);
     width: rem(330);
-    padding: rem(29) 0;
+    padding: rem(29) rem(34);
   }
+}
+
+.p-contact__button:hover {
+  opacity: 0.7;
 }
 
 .p-contact__button img {
   width: rem(16);
+}
+
+.end-message {
+  display: none;
+}
+
+.false-message {
+  display: none;
+}
+
+.p-contact__button.disabled {
+  background-color: gray;
+}
+
+/* オレンジのスタイル */
+.p-contact__button:not(.disabled) {
+  background-color: $orange;
 }

@@ -23,7 +23,10 @@
 }
 
 .p-message__inner {
-  padding: rem(23) 0;
+  padding: rem(23) rem(20);
+  @include mq(md) {
+    padding: rem(23) 0 rem(23) rem(25);
+  }
 }
 
 .p-message__title {

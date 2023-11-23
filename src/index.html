@@ -25,14 +25,20 @@
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
   
+  <div id="splash">
+    <div id="splash_logo">
+      <img src="../assets/images/common/cta-logo.svg" alt="ロゴマーク" class="fadeUp">
+    </div>
+  </div> 
 
-  <header class="p-header">
+  <header class="p-header js-header" id="index.html">
     <div class="p-header__inner">
       <div class="p-header__logo">
         <a href="#" class="c-logo">
@@ -53,56 +59,59 @@
       <nav class="p-header__pc-nav pc-nav">
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
-            <a href="">Mission&Vision</a>
+            <a href="#mission">Mission&Vision</a>
           </li><!-- /.pc-nav__item -->
           <li class="pc-nav__item">
-            <a href="">Message</a>
+            <a href="#message">Message</a>
           </li><!-- /.pc-nav__item -->
           <li class="pc-nav__item">
-            <a href="">Job List</a>
+            <a href="#jobList">Job List</a>
           </li><!-- /.pc-nav__item -->                
         </ul><!-- /.pc-nav__items -->
         <div class="p-nav__buttons">         
           <div class="wrapper">
             <button class="modal__btn c-button color-light" data-micromodal-trigger="modal-1" role="button">MY PAGEはこちら</button>
-          </div>
+          </div>         
+
           <div id="modal-1" aria-hidden="true">
             <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-            
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-              <div class="modal__close-btn">
-                <button class="batsu"></button>
-              </div><!-- /.modal__close-btn -->              
-              <p class="modal__title">MY PAGE-ログイン</p>
-              <form action="" method="post" id="">
-                <dl>
-                  <dt class="modal__form-item">
-                    メールアドレス
-                  </dt>
-                  <dd>
-                    <input class="modal__form-box" type="email" name="mail_address" value="" class="validate[]" />
-                  </dd>
-                </dl>
-                <dl>
-                  <dt class="modal__form-item">
-                    パスワード
-                  </dt>
-                  <dd>
-                    <input class="modal__form-box" type="text" name="company" value="" />
-                  </dd>
-                </dl>
-              </form>
-              <div class="modal__close-item">
-                <button class="modal__close" aria-label="Close modal" data-micromodal-close>サインイン</button>
-              </div>   
-              <div class="modal__signUp">
-                <a href="">新規登録はこちら</a>
-              </div><!-- /.modal__signup -->      
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <div class="modal__close-btn">
+                        <button class="batsu"></button>
+                    </div>
+                    <!-- /.modal__close-btn -->
+                    <p class="modal__title">MY PAGE-ログイン</p>
+                    <form action="" method="post" id="loginForm">
+                        <dl>
+                            <dt class="modal__form-item">メールアドレス</dt>
+                            <dd>
+                                <input class="modal__form-box" type="email" name="mail_address" value=""
+                                    placeholder="例）example@example.com" required />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="modal__form-item">パスワード</dt>
+                            <dd>
+                                <input class="modal__form-box" type="password" name="company" value=""
+                                    autocomplete="current-password" required />
+                            </dd>
+                        </dl>
+                    </form>
+                    <div class="modal__close-item">
+                        <input class="modal__close" value="サインイン" varia-label="Close modal" data-micromodal-close
+                            id="js-submit" disabled />
+                    </div>
+                    <div class="modal__signUp">
+                        <a href="contact.html">新規登録はこちら</a>
+                    </div>
+                    <!-- /.modal__signup -->
+                </div>
             </div>
-          </div>
         </div>
-          <div class="p-nav__button"> 
-            <a href="#" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
+
+
+          <div class="p-nav__button">             
+            <a href="contact.html" class="c-button">エントリーはこちら</a>
           </div>
         </div><!-- /.p-nav__buttons -->
       </nav><!-- /.p-header__pc-nav -->
@@ -120,21 +129,22 @@
         </div><!-- /.header__logo -->
         <ul class="sp-nav__items">
           <li class="sp-nav__item">
-            <a href="">Mission&Vision</a>
+            <a href="#mission">Mission&Vision</a>
           </li><!-- /.sp-nav__item -->
           <li class="sp-nav__item">
-            <a href="">Message</a>
+            <a href="#message">Message</a>
           </li><!-- /.sp-nav__item -->
           <li class="sp-nav__item">
-            <a href="">Job List</a>
+            <a href="#jobList">Job List</a>
           </li><!-- /.sp-nav__item -->          
         </ul><!-- /.sp-nav__items -->
-        <div class="p-nav__buttons sp-nav__btns">
-          <div class="p-nav__button">                  
-            <a href="#" class="c-button color-light">my pageはこちら</a><!-- /.mv__btn -->
-          </div>
+        <div class="p-nav__buttons sp-nav__btns">          
+          <div class="wrapper">
+            <button class="modal__btn c-button color-light" data-micromodal-trigger="modal-1" role="button">MY PAGEはこちら</button>
+          </div>         
+          
           <div class="p-nav__button"> 
-            <a href="#" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
+            <a href="contact.html" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
           </div>
         </div><!-- /.p-nav__buttons -->
       </nav><!-- /.p-header__sp-nav -->      
@@ -146,16 +156,16 @@
       <div class="p-mv__images">
         <div class="p-mv__slide slide">
           <div class="slide-image">
-            <img src="../assets/images/common/fv01.jpg" alt="">
+            <img src="../assets/images/common/fv01.jpg" alt="スーツ姿の男性が微笑んでいる画像">
           </div>
           <div class="slide-image">
-            <img src="../assets/images/common/fv02.jpg" alt="">
+            <img src="../assets/images/common/fv02.jpg" alt="スーツ姿の女性と男性が話している画像">
           </div>
           <div class="slide-image">
-            <img src="../assets/images/common/fv03.jpg" alt="">
+            <img src="../assets/images/common/fv03.jpg" alt="スーツ姿の男性が笑っている画像">
           </div>
         </div>
-        <div class="slide-copy">
+        <div class="slide-copy" id="kagenasi">
           <img src="../assets/images/common/Vector.png" alt="最高に面白い仕事で、この世界で揺らせ。">
         </div>
       </div>  
@@ -163,11 +173,11 @@
   </section><!-- /.l-mv -->
 
   
-  <section class="l-mission p-mission">
+  <section class="l-mission p-mission" id="mission">
     <div class="p-mission__inner l-inner">
       <div class="c-section-header">
         <div class="c-section-header__entitle">
-          <img src="../assets/images/common/Mission&Vision.svg" alt="">
+          <img src="../assets/images/common/Mission&Vision.svg" alt="Mission&Vision">
         </div><!-- /.c-section-header__entitle -->
         <h2 class="c-section-header__jatitle">Igatta Groupの<br class="u-mobile">ミッション・ビジョン</h2><!-- /.c-section-header__title -->
       </div><!-- /.c-section-header -->
@@ -207,10 +217,10 @@
     </div><!-- /.p-mission__inner -->
   </section><!-- /.p-mission -->
 
-  <section class="l-message p-message">
+  <section class="l-message p-message" id="message">
     <div class="c-section-header">
       <div class="c-section-header__entitle">
-        <img src="../assets/images/common/Message.svg" alt="">
+        <img src="../assets/images/common/Message.svg" alt="message">
       </div><!-- /.c-section-header__entitle -->
       <h2 class="c-section-header__jatitle">社長メッセージ</h2><!-- /.c-section-header__title -->
     </div><!-- /.c-section-header -->
@@ -241,12 +251,12 @@
       </div><!-- /.p-mission__inner -->
       <div class="p-message__ceo-name">
         <p class="ceo">代表取締役社長</p><!-- /.ceo -->
-        <img src="../assets/images/common/ceo-name.svg" alt="" class="name">
+        <img src="../assets/images/common/ceo-name.svg" alt="三浦吉茂" class="name">
       </div><!-- /.p-message__ceo-name -->
     </div><!-- /.p-message__content -->
   </section><!-- /.p-mission -->
   
-  <section class="l-jobList p-jobList">
+  <section class="l-jobList p-jobList" id="jobList">
     <div class="p-jobList__inner l-inner"> 
       <div class="c-section-header">
         <div class="c-section-header__entitle">
@@ -259,9 +269,9 @@
       </p><!-- /.p-jobList__info -->
       <div class="p-jobList__contain">
         <div class="p-jobList__cards">
-          <a href="#" class="p-jobList-card c-jobList-card">
+          <a href="director.html" class="p-jobList-card c-jobList-card">
             <figure class="c-jobList-card__img">
-              <img src="../assets/images/common/director.jpg" alt="ジョブリストカード1">
+              <img src="../assets/images/common/director.jpg" alt="ディレクターイメージ画像">
             </figure>
             <div class="c-jobList-card__contents">
               <div class="c-jobList-card__info">
@@ -272,14 +282,14 @@
                   Webディレクターはクライアントとの打ち合わせから、<br class="u-desktop">プロジェクト全体の進捗管理までを行います。
                 </p>
                 <div class="c-jobList-card__icon">
-                  <img src="../assets/images/common/article-more-icon.svg" alt="article-more-icon">
+                  <img src="../assets/images/common/article-more-icon.svg" alt="矢印アイコン">
                 </div><!-- /.article-more-icon-->
               </div> 
             </div>
           </a>
-          <a href="#" class="p-jobList-card c-jobList-card">
+          <a href="engineer.html" class="p-jobList-card c-jobList-card">
             <figure class="c-jobList-card__img">
-              <img src="../assets/images/common/frontend.jpg" alt="ジョブリストカード2">
+              <img src="../assets/images/common/frontend.jpg" alt="エンジニアイメージ画像">
             </figure>
             <div class="c-jobList-card__contents">
               <div class="c-jobList-card__info">
@@ -290,14 +300,14 @@
                   WebエンジニアはクライアントのWebサイトや自社サイ<br class="u-desktop">トのフロント・バックエンド両方の開発・改修を行いま<br class="u-desktop">す。
                 </p>
                 <div class="c-jobList-card__icom">
-                  <img src="../assets/images/common/article-more-icon.svg" alt="article-more-icon">
+                  <img src="../assets/images/common/article-more-icon.svg" alt="矢印アイコン">
                 </div><!-- /.article-more-icon -->
               </div> 
             </div>
           </a>
-          <a href="#" class="p-jobList-card c-jobList-card">
+          <a href="designer.html" class="p-jobList-card c-jobList-card">
             <figure class="c-jobList-card__img">
-              <img src="../assets/images/common/designer.jpg" alt="ジョブリストカード3">
+              <img src="../assets/images/common/designer.jpg" alt="デザイナーイメージ画像">
             </figure>
             <div class="c-jobList-card__contents">
               <div class="c-jobList-card__info">
@@ -308,14 +318,14 @@
                   WebデザイナーはクライアントのWebサイトや自社サイ<br class="u-desktop">トのデザイン・コーディングを行います。
                 </p>
                 <div class="c-jobList-card__icom">
-                  <img src="../assets/images/common/article-more-icon.svg" alt="article-more-icon">
+                  <img src="../assets/images/common/article-more-icon.svg" alt="矢印アイコン">
                 </div><!-- /.article-more-icon -->
               </div> 
             </div>
           </a>
-          <a href="#" class="p-jobList-card c-jobList-card">
+          <a href="marketer.html" class="p-jobList-card c-jobList-card">
             <figure class="c-jobList-card__img">
-              <img src="../assets/images/common/marketer.jpg" alt="ジョブリストカード4">
+              <img src="../assets/images/common/marketer.jpg" alt="マーケターイメージ画像">
             </figure>
             <div class="c-jobList-card__contents">
               <div class="c-jobList-card__info">
@@ -326,7 +336,7 @@
                   WebマーケターはクライアントのWebサイトや自社サイ<br class="u-desktop">トの広告運用やLPO、EC運用などを行います。
                 </p>
                 <div class="c-jobList-card__icon">
-                  <img src="../assets/images/common/article-more-icon.svg" alt="article-more-icon">
+                  <img src="../assets/images/common/article-more-icon.svg" alt="矢印アイコン">
                 </div><!-- /.article-more-icon -->
               </div> 
             </div>
@@ -343,13 +353,13 @@
           <img src="../assets/images/common/cta-logo.svg" alt="ロゴマーク">
         </div><!-- /.p-footer__contents-logo -->
         <div class="p-footer__contents-copy">
-          <p class="p-footer__copy">熱い気持ちを持った方、<br>募集しています。</p>
+          <p class="p-footer__copy">熱い気持ちを持った方、<br class="u-mobile">募集しています。</p>
           <p class="p-footer__copy-text">まずはカジュアルランチから。<br class="u-mobile">皆様の就活の思い、悩みの相談に乗ります。<br>
             また弊社のオフィスツアー・社員との座談会も行います。<br>
             価値観が会えば、面接に起こしいただけると幸いです</p>
         </div>      
         <div class="p-footer__contents-button">                  
-          <a href="#" class="p-footer__button">
+          <a href="contact.html" class="p-footer__button">
             <span class="btn-text">エントリーはこちら</span>
             <img src="../assets/images/common/btn-more-icon.svg" alt="ボタンの矢印アイコン">
           </a><!-- /.mv__btn -->
@@ -372,6 +382,7 @@
         <small>Copyright© IGATTA GROUP co.,Ltd. All Rights Reserved.</small>
       </div> 
     </div><!-- /.p-footer__copyright -->     
-  </footer>   
+  </footer> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>  
 </body>
 </html>

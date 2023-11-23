@@ -1,134 +1,167 @@
+jQuery(function ($) {
+ 
+  // ロゴの表示 ローディング
+  $(window).on('load', function () {
+    $("#splash").delay(1500).fadeOut('slow');
+    $("#splash_logo").delay(1200).fadeOut('slow');
+  });
+ 
 
-jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
-
-  // let topBtn = $('.c-to-top');
-  // topBtn.hide();
-
-  // ボタンの表示設定
+  // ヘッダー
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 70) {
-      // 指定px以上のスクロールでボタンを表示
-      topBtn.fadeIn();
-    } else {
-      // 画面が指定pxより上ならボタンを非表示
-      topBtn.fadeOut();
-    }
-  });
-
-
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('.p-header');
-    const headerHeight = header.offsetHeight; // ヘッダーの高さを取得
+    const header = $('.p-header');
+    const headerHeight = header.height();
     const scrollY = window.pageYOffset;
-    
+
     if (scrollY >= 100) {
-      header.classList.add('header--sticky');
-      document.body.style.marginTop = headerHeight + 'px'; // コンテンツにヘッダーの高さ分の余白を設定
+      header.addClass('header--sticky');
+      $('body').css('margin-top', headerHeight + 'px');
     } else {
-      header.classList.remove('header--sticky');
-      document.body.style.marginTop = '0'; // コンテンツの余白をリセット
+      header.removeClass('header--sticky');
+      $('body').css('margin-top', '0');
     }
   });
 
-  // ヘッダークラスの付与
-  let header = $('.p-header');
-  let headerHeight = $('.p-header').height();
-  let height = $('.p-mv').height();  
-  $(window).scroll(function() {
-    if($(this).scrollTop() > height - headerHeight) {
-      header.addClass('is-color');      
-    } else {
-      header.removeClass('is-color');
-    }  
+  // ハンバーガーメニュー
+  $(".js-hamburger").click(function () {
+    $(".js-hamburger").toggleClass('is-active');
+    $(".js-sp-nav").fadeToggle(300);
   });
 
-  $(document).ready(function () {
-    // Ensure the DOM is ready before executing the script
-  
-    let header = $('.p-header');
-    let headerHeight = header.height(); // Use the variable directly
-    let height = $('.p-mv').height();
-  
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > height - headerHeight) {
-        header.addClass('is-color');
+  // ナビゲーションリンクのクリックを処理
+  $(".sp-nav__item a").click(function () {
+    $(".js-hamburger").removeClass('is-active');
+    $(".js-sp-nav").fadeOut(300);
+
+    var targetId = $(this).attr("href");
+    $("html, body").animate({
+      scrollTop: $(targetId).offset().top
+    }, 100);
+  });
+
+// Micromodalの初期化
+MicroModal.init({
+  disableOverlayClose: true, // オーバーレイをクリックしても閉じないようにする
+  disableScroll: true,        // 背後のスクロールを無効にする
+});
+
+// Micromodalの初期化
+MicroModal.init({
+  disableOverlayClose: true, // オーバーレイをクリックしても閉じないようにする
+});
+
+// モーダルの初期化
+$(".modal__btn").click(function () {
+  $(".js-hamburger").removeClass('is-active');
+  $(".js-sp-nav").fadeOut(300);
+
+  // Micromodalを使用してモーダルを表示
+  MicroModal.show('modal-1');
+});
+
+// 閉じるボタンとオーバーレイの処理
+$('#modal__close-btn').click(function () {
+  // ✖印がクリックされたときだけモーダルを閉じる
+  MicroModal.close('modal-1');
+});
+
+// SPナビのエントリーボタンがクリックされたときの処理
+$(".p-nav__button .c-button, .sp-nav__btns .c-button").click(function () {
+  $(".js-hamburger").removeClass('is-active');
+  $(".js-sp-nav").fadeOut(300);
+});
+
+// 他のイベントハンドラは変更なし
+
+
+
+  // フォームの送信処理
+  const $submitBtn = $('#js-submit');
+  $('#form input,#form textarea').on('change', function () {
+    $submitBtn.prop('disabled', !(
+      $('#form input[type="text"]').val() !== "" &&
+      $('#form input[type="email"]').val() !== "" &&
+      $('#form input[type="checkbox"]').val() !== "" &&
+      $('#form input[type="password"]').val() !== "" &&
+      $('#form #privacyCheck').prop('checked') === true
+    ));
+  });
+
+  // フォーム送信処理 (Vanilla JavaScript)
+  const form = document.getElementById('form');
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeWd3EXzuxGmNNDByAZrVSbX1CSjFuCQjSq3ihZB4vKfO_2lw/formResponse', true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          window.location.href = "thanks.html";
+          form.reset();
+        }
+      };
+      xhr.send(formData);
+    });
+  }
+});
+
+// 全て入力しないと送信できない
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('loginForm');
+  var submitButton = document.getElementById('js-submit');
+
+  form.addEventListener('input', function () {
+      var inputs = form.querySelectorAll('input[required]');
+      var isFormValid = true;
+
+      inputs.forEach(function (input) {
+          if (!input.value.trim()) {
+              isFormValid = false;
+          }
+      });
+
+      submitButton.disabled = !isFormValid;
+
+      // ボタンのスタイルを変更
+      if (isFormValid) {
+          submitButton.style.backgroundColor = 'orange';
       } else {
-        header.removeClass('is-color');
+          submitButton.style.backgroundColor = 'gray';
+      }
+  });
+});
+
+// フォームに全て入力でボタン活性化
+
+document.addEventListener("DOMContentLoaded", function () {
+  // フォームと送信ボタンを選択
+  const form = document.getElementById("form");
+  const submitButton = document.getElementById("button");
+
+  // すべての必須入力フィールドにinputイベントリスナーを追加
+  const requiredInputs = form.querySelectorAll("[required]");
+  requiredInputs.forEach(function (input) {
+    input.addEventListener("input", function () {
+      // フォームの妥当性に基づいて送信ボタンの色を変更
+      if (form.checkValidity()) {
+        submitButton.classList.remove("disabled");
+      } else {
+        submitButton.classList.add("disabled");
       }
     });
   });
-  
 
-  // モーダル
+  // ページ読み込み時にも一度チェックしてボタンの初期色を設定
+  if (form.checkValidity()) {
+    submitButton.classList.remove("disabled");
+  } else {
+    submitButton.classList.add("disabled");
+  }
 
-  MicroModal.init({
-    openClass: 'is-open',
-    disableScroll: true,
-  });
-
-   // 閉じるボタンをクリックしたときの処理
-   document.getElementById('modal-close-btn').addEventListener('click', function() {
-    MicroModal.close('modal-1'); // モーダルを閉じる
-  });
-
-  // モーダルオーバーレイをクリックしたときの処理
-  document.querySelector('.modal__overlay').addEventListener('click', function(event) {
-    if (event.target === this) {
-      MicroModal.close('modal-1'); // モーダルを閉じる
-    }
-  });
-
-  // ボタンをクリックしたらスクロールして上に戻る
-  // topBtn.click(function () {
-  //   $('body,html').animate({
-  //     scrollTop: 0
-  //   }, 300, 'swing');
-  //   return false;
-  // });
-
-  //ドロワーメニュー
-  $(".js-hamburger").click(function () {
-    if($(".js-hamburger").hasClass('is-active')) {
-      $(".js-hamburger").removeClass('is-active');
-      $(".js-sp-nav").fadeOut(300);
-    } else {
-      $(".js-hamburger").addClass('is-active');
-      $(".js-sp-nav").fadeIn(300); 
-    };
-   
-  });
-  
-
-
-
-  // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
-
-  // $(document).on('click', 'a[href*="#"]', function () {
-  //   let time = 400;
-  //   let header = $('header').innerHeight();
-  //   let target = $(this.hash);
-  //   if (!target.length) return;
-  //   let targetY = target.offset().top - header;
-  //   $('html,body').animate({ scrollTop: targetY }, time, 'swing');
-  //   return false;
-  // });
-
-  // var swiper = new Swiper(".js-mv-swiper", {
-  //   pagination: {
-  //     el: ".js-mv-pagination",
-  //   },
-  //   loop: true,
-  //   clickable: true,  
-  //   // autoplay: {
-  //   //   delay: 3000,    
-  //   // },
-  // });
+  // フォームを検証するための関数
+  function validateForm() {
+    // HTML5のcheckValidity()メソッドを使用してフォームの妥当性を確認
+    return form.checkValidity();
+  }
 });
-
-// 横スクロールをチェックする
-
-const width = document.documentElement.clientWidth
- $$("*").forEach(el => {
-  el.style.outline = '1px solid tomato'
-  if (width < el.clientWidth) console.log(el)
-})

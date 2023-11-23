@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="widt class="p-contact__item"h=device-widt class="p-contact__item"h,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="robots" content="noindex" />
   <!-- meta情報 -->
@@ -26,16 +26,15 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>  
   <script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
-  
-
-  <header class="l-header p-header p-header__page">
+  <header class="l-header p-header p-header__page" id="contact">
     <div class="p-header__inner">
       <div class="p-header__logo">
-        <a href="#" class="c-logo">
+        <a href="index.html" class="c-logo">
           <div class="c-logo__logomark">
             <img src="../assets/images/common/recruit-logo.svg" alt="ロゴマーク">           
           </div><!-- /.p-header__logomark -->
@@ -53,62 +52,63 @@
       <nav class="p-header__pc-nav pc-nav">
         <ul class="pc-nav__items">
           <li class="page-item">
-            <a href="">Mission&Vision</a>
+            <a href="index.html#mission">Mission&Vision</a>
           </li><!-- /.pc-nav__item -->
           <li class="page-item">
-            <a href="">Message</a>
+            <a href="index.html#message">Message</a>
           </li><!-- /.pc-nav__item -->
           <li class="page-item">
-            <a href="">Job List</a>
+            <a href="index.html#jobList">Job List</a>
           </li><!-- /.pc-nav__item -->                
         </ul><!-- /.pc-nav__items -->
         <div class="p-nav__buttons">         
           <div class="wrapper">
             <button class="modal__btn c-button color-light" data-micromodal-trigger="modal-1" role="button">MY PAGEはこちら</button>
           </div>
-          <div id="modal-1" aria-hidd class="p-contact__item-form"en="true">
+          <div id="modal-1" aria-hidden="true">
             <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-            
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-              <div class="modal__close-btn">
-                <button class="batsu"></button>
-              </div><!-- /.modal__close-btn -->              
-              <p class="modal__title">MY PAGE-ログイン</p>
-              <form action="" method="post" id="">
-                <dl class="p-contact__items">
-                  <dt class="p-contact__item" class="modal__form-item">
-                    メールアドレス
-                  </dt>
-                  <dd class="p-contact__item-form">
-                    <input class="modal__form-box" type="email" name="mail_add class="p-contact__item-form"ress" value="" class="validate[]" />
-                  </dd>
-                </dl class="p-contact__items">
-                <dl class="p-contact__items">
-                  <dt class="p-contact__item" class="modal__form-item">
-                    パスワード
-                  </dt>
-                  <dd class="p-contact__item-form">
-                    <input class="modal__form-box" type="text" name="company" value="" />
-                  </dd>
-                </dl class="p-contact__items">
-              </form>
-              <div class="modal__close-item">
-                <button class="modal__close" aria-label="Close modal" data-micromodal-close>サインイン</button>
-              </div>   
-              <div class="modal__signUp">
-                <a href="">新規登録はこちら</a>
-              </div><!-- /.modal__signup -->      
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <div class="modal__close-btn">
+                        <button class="batsu"></button>
+                    </div>
+                    <!-- /.modal__close-btn -->
+                    <p class="modal__title">MY PAGE-ログイン</p>
+                    <form action="" method="post" id="loginForm">
+                        <dl>
+                            <dt class="modal__form-item">メールアドレス</dt>
+                            <dd>
+                                <input class="modal__form-box" type="email" name="mail_address" value=""
+                                    placeholder="例）example@example.com" required />
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="modal__form-item">パスワード</dt>
+                            <dd>
+                                <input class="modal__form-box" type="password" name="company" value=""
+                                    autocomplete="current-password" required />
+                            </dd>
+                        </dl>
+                    </form>
+                    <div class="modal__close-item">
+                        <input class="modal__close" value="サインイン" varia-label="Close modal" data-micromodal-close
+                            id="js-submit" disabled />
+                    </div>
+                    <div class="modal__signUp">
+                        <a href="contact.html">新規登録はこちら</a>
+                    </div>
+                    <!-- /.modal__signup -->
+                </div>
             </div>
-          </div>
         </div>
+
           <div class="p-nav__button"> 
-            <a href="#" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
+            <a href="contact.html" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
           </div>
         </div><!-- /.p-nav__buttons -->
       </nav><!-- /.p-header__pc-nav -->
       <nav class="p-header__sp-nav sp-nav js-sp-nav">
         <div class="p-header__logo sp-nav__logo">
-          <a href="#" class="c-logo">
+          <a href="index.html" class="c-logo">
             <div class="c-logo__logomark">
               <img src="../assets/images/common/cta-logo.svg" alt="ロゴマーク">           
             </div><!-- /.p-header__logomark -->
@@ -120,21 +120,24 @@
         </div><!-- /.header__logo -->
         <ul class="sp-nav__items">
           <li class="sp-nav__item">
-            <a href="">Mission&Vision</a>
+            <a href="index.html#mission">Mission&Vision</a>
           </li><!-- /.sp-nav__item -->
           <li class="sp-nav__item">
-            <a href="">Message</a>
+            <a href="index.html#message">Message</a>
           </li><!-- /.sp-nav__item -->
           <li class="sp-nav__item">
-            <a href="">Job List</a>
-          </li><!-- /.sp-nav__item -->          
+            <a href="index.html#jobList">Job List</a>
+          </li><!-- /.sp-nav__item -->        
         </ul><!-- /.sp-nav__items -->
         <div class="p-nav__buttons sp-nav__btns">
-          <div class="p-nav__button">                  
-            <a href="#" class="c-button color-light">my pageはこちら</a><!-- /.mv__btn -->
+          <!-- <div class="p-nav__button">                  
+            <a href="#" class="c-button color-light">my pageはこちら</a>
+          </div> -->
+          <div class="wrapper">
+            <button class="modal__btn c-button color-light" data-micromodal-trigger="modal-1" role="button">MY PAGEはこちら</button>
           </div>
           <div class="p-nav__button"> 
-            <a href="#" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
+            <a href="contact.html" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
           </div>
         </div><!-- /.p-nav__buttons -->
       </nav><!-- /.p-header__sp-nav -->      
@@ -152,14 +155,20 @@
           </p><!-- /.p-contact__text -->
         </div><!-- /.p-contact__header -->
         <div class="p-contact__form">
-        <form action="" method="post" id="">       
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeWd3EXzuxGmNNDByAZrVSbX1CSjFuCQjSq3ihZB4vKfO_2lw/formResponse" target="_self" method="POST" id="form">       
           <dl class="p-contact__items">
             <dt class="p-contact__item">
               <span class="bg-color">必須</span>
               <label for="name" class="inquiry">お名前</label>             
             </dt>
             <dd class="p-contact__item-form">
-              <input type="text" name="company" value="" placeholder="例）長谷川　太郎"/>
+              <input type="text" 
+              name="entry.1290260480" 
+              value="" 
+              placeholder="例）長谷川　太郎"
+              autocomplete="username"
+              required
+              />
             </dd>
           </dl>
           <dl class="p-contact__items">
@@ -168,16 +177,30 @@
               <label for="name" class="inquiry">ご年齢</label>             
             </dt>
             <dd class="p-contact__item-form short-form">
-              <input  class="short-form" type="text" name="company" value="" placeholder="例）32" />
+              <input
+                class="short-form" 
+                type="text" 
+                name="entry.1545448478"
+                value="" 
+                placeholder="例）32" 
+                required
+                />
             </dd>
-          </dl class="p-contact__items">
+          </dl>
           <dl class="p-contact__items">
             <dt class="p-contact__item">
               <span class="bg-color">必須</span>
               <label for="name" class="inquiry">メールアドレス</label>             
             </dt>
             <dd class="p-contact__item-form">
-              <input type="email" name="mail_add" class="p-contact__item-form" value="" placeholder="例）example@example.com" />
+              <input 
+              type="email" 
+              name="entry.13130264"
+              class="p-contact__item-form" 
+              value="" 
+              placeholder="例）example@example.com" 
+              required
+              />
             </dd>
           </dl>
           <dl class="p-contact__items item-top">
@@ -186,10 +209,10 @@
               <label for="name" class="inquiry">応募職種</label>             
             </dt>
             <dd class="p-contact__item-form radio-item">
-              <label><input type="radio" name="target" value="Webディレクター" checked/><span>Webディレクター</span></label>
-              <label><input type="radio" name="target" value="Webエンジニア" /><span>Webエンジニア</span></label>
-              <label><input type="radio" name="target" value="Webデザイナー" /><span>Webデザイナー</span></label>
-              <label><input type="radio" name="target" value="Webマーケター" /><span>Webマーケター</span></label>
+              <label><input type="radio" name="entry.1937588346" value="Webディレクター" checked/><span>Webディレクター</span></label>
+              <label><input type="radio" name="entry.1937588346" value="Webエンジニア" /><span>Webエンジニア</span></label>
+              <label><input type="radio" name="entry.1937588346" value="Webデザイナー" /><span>Webデザイナー</span></label>
+              <label><input type="radio" name="entry.1937588346" value="Webマーケター" /><span>Webマーケター</span></label>
             </dd>
           </dl>
           <dl class="p-contact__items">
@@ -198,7 +221,13 @@
               <label for="name" class="inquiry">希望年収</label>             
             </dt>
             <dd class="p-contact__item-form">
-              <input class="short-form" type="text" name="company" value="" />
+              <input 
+              class="short-form" 
+              type="text" 
+              name="entry.1590266785"
+              value="" 
+              required
+              />
             </dd>
           </dl>          
           <dl class="p-contact__items item-top">
@@ -209,7 +238,11 @@
             <dd class="p-contact__item-form">
               <p>これまでの開発実績の分かるGithubのURLや、公開しているWebサイトがあれば、<br>
                 そのURLの添付をお願いします。</p>
-              <textarea name="contents"></textarea>
+              <textarea 
+              name="entry.1156482306"
+              required
+              >
+              </textarea>
             </dd>
           </dl>
           <dl class="p-contact__items item-top">
@@ -218,8 +251,12 @@
               <label for="name" class="inquiry">学歴</label>             
             </dt>
             <dd class="p-contact__item-form">
-              <p>高校以降の学歴をご記載下さい。</p>
-              <textarea name="contents"></textarea>
+                <p>高校以降の学歴をご記載下さい。</p>
+                <textarea 
+                name="entry.1473507852"
+                required
+                >
+            </textarea>
             </dd>
           </dl>
           <dl class="p-contact__items item-top">
@@ -229,21 +266,35 @@
             </dt>
             <dd class="p-contact__item-form">
               <p>簡単で結構ですので、あなたのPRポイントをご記載下さい。</p>
-              <textarea name="contents"></textarea>
+              <textarea 
+                name="entry.2077292842"
+                required
+                >
+              </textarea>
             </dd>
           </dl>
           <div class="p-contact__form-footer">
             <div class="check-item">             
-              <label><input type="checkbox" name="hoge" value="チェックボックス1"><span>個人情報保護方針に同意する</span></label>                
+              <label>
+                <input 
+                type="checkbox" 
+                name="" 
+                value="" 
+                required
+                >
+                <span>個人情報保護方針に同意する</span>
+              </label>                
             </div>
             <div class="p-contact__form-btn">
-              <a href="#" class="p-contact__button">
+              <button class="p-contact__button submit-btn" type="submit" id="button">
                 <span class="btn-text">エントリーはこちら</span>
                 <img src="../assets/images/common/btn-more-icon.svg" alt="ボタンの矢印アイコン">
-              </a><!-- /.mv__btn -->
+              </button>            
             </div>
           </div><!-- /.p-contact__form-footer -->          
         </form>
+        <p class="end-message">お問い合わせありがとうございました</p>
+        <p class="false-message">送信失敗です</p>
       </div><!-- /.p-contact__form -->      
       </div><!-- /.p-contact__container -->
     </div><!-- /.p-contact__inner -->
@@ -254,7 +305,7 @@
   <footer class="l-contact-footer p-footer">   
     <div class="p-footer__footer">
       <div class="p-footer__footer-logo">
-        <a href="#" class="c-logo">
+        <a href="index.html" class="c-logo">
           <div class="c-logo__logomark">
             <img src="../assets/images/common/recruit-logo.svg" alt="ロゴマーク">           
           </div><!-- /.p-header__logomark -->

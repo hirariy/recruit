@@ -11,9 +11,12 @@
   line-height: calc(18/ 13);
   letter-spacing: 0.05em;
   width: rem(180);
-  padding: rem(23) 0;
-  border-radius: rem(30);
-  margin-top: rem(17);
+  padding: rem(16) 0;
+  border-radius: rem(30);  
+}
+
+.c-button:hover {
+  opacity: 0.7;
 }
 
 .color-light {

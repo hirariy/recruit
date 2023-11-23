@@ -71,7 +71,10 @@
   line-height: calc(20 /12); 
   letter-spacing: 0.05em;
   height: rem(100); 
-  padding: rem(30) rem(17);
+  padding: rem(20) rem(17);
+  @include mq(md) {
+    padding: rem(30) rem(17);
+  }
 }
   
 .c-jobList-card__icon {

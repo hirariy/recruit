@@ -1,13 +1,13 @@
 @use "global" as *;
 
 .p-header {  
-  height: rem(60);
+  height: rem(76);
   background: $white;
   z-index: 100;
   position: fixed;  
   width: 100%;  
   transition: 0.3s; 
-  padding-top: rem(10); 
+  // padding-top: rem(10); 
   top: 0; /* ヘッダーをページの上端に固定 */
   left: 0; /* ヘッダーの左端をページの左端に固定 */
   right: 0; /* ヘッダーの右端をページの右端に固定 */
@@ -18,9 +18,13 @@
 
 }
 
-.p-header.is-color {
+.p-header.header--sticky {
   color: $black;
-  background-color: #FFF;  
+  background-color: $white;  
+}
+
+.header--sticky .pc-nav__item a {
+  color: $black;
 }
 
 .p-header__inner {
@@ -45,7 +49,8 @@
   display: none;
   @include mq(md){
     display: block;
-    display: flex;    
+    display: flex;  
+    align-items: center;  
   }
 }
 
@@ -72,4 +77,8 @@
   100% {
     transform: translateY(0%);
   }
+}
+
+:target {
+  scroll-margin-top: rem(60);
 }

@@ -23,9 +23,13 @@ body {
 }
 .modal__container {
   background-color: #fff;
-  padding: rem(20); 
-  width: rem(500);  
-  overflow-y: auto;  
+  padding: rem(10); 
+  width: rem(300);  
+  overflow-y: auto; 
+  @include mq(md) {
+    padding: rem(20); 
+    width: rem(500);  
+  } 
 }
 
 .modal__close-btn {
@@ -112,3 +116,11 @@ body {
 }
 
 
+.modal__close[disabled] {
+  background-color: gray; /* 無効な状態の背景色を変更 */
+  cursor: not-allowed;
+}
+
+.modal__close {
+  background-color: orange; /* 有効な状態の背景色を変更 */
+}

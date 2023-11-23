@@ -20,15 +20,17 @@
 }
 
 .p-recruit__figure {
-  
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; 
   background-size: cover;  
-  overflow: hidden;
-  aspect-ratio: 1240/434; //横/縦
+  overflow: hidden;  
+  aspect-ratio: 1240/434; //横/縦  
+  height: rem(250);
   @include mq(md) {
-    width: 86%;
-    margin-left: auto;
-    margin-right: auto;
-  }  
+    width: 80%;
+    height: rem(434);
+  }
 }
 
 .p-recruit__inner {
@@ -43,8 +45,12 @@
 
 .p-recruit__title {
   position: absolute;
-  top: 6%;
-  left: 36.5%;
+  top: 4%;
+  left: 24%;  
+  @include mq(md) {
+    top: 6%;
+    left: 36.5%;   
+  }
 }
 
 .p-recruit__title p { 
@@ -57,11 +63,14 @@
 
 .p-recruit__title h2 {
   color: $white;  
-  font-size: rem(42);
+  font-size: rem(26);
   font-weight: 400;
   line-height: calc(60/ 42);
   letter-spacing: 0.05em;
   padding-top: rem(9);
+  @include mq(md) {
+    font-size: rem(42);
+  }
 }
 
 .p-recruit__text {
@@ -87,23 +96,33 @@
 }
 
 .p-recruit__item {
-  display: flex; 
-  display: table;  
+  // display: flex; 
+  // display: table;  
   border-top: 1px solid #E7E7E7;
   border-bottom: 1px solid #E7E7E7;
-  width: rem(1122);
+  // width: rem(1122);
+  @include mq(md) {
+    display: flex; 
+    display: table;  
+    width: rem(1122);
+  }
 }
 
 .p-recruit__item-title {
-  width: rem(200);
-  background: #F5F5F5;
-  padding-left: rem(40);
-  display: table-cell;
+  text-align: center;
+  padding: rem(10) 0;
+  width: 100%;
+  background: #F5F5F5;   
   vertical-align: middle;  
   color: #333; 
   font-size: rem(14); 
   font-weight: $bold;
   line-height: calc(28 /14); /* 28px */
+  @include mq(md) {
+    width: rem(200);
+    display: table-cell;
+    padding-left: rem(40); 
+  }
 }
 
 .p-recruit__item-text {
