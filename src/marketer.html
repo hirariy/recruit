@@ -66,44 +66,7 @@
         <div class="p-nav__buttons">         
           <div class="wrapper">
             <button class="modal__btn c-button color-light" data-micromodal-trigger="modal-1" role="button">MY PAGEはこちら</button>
-          </div>
-          <div id="modal-1" aria-hidden="true">
-            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-                    <div class="modal__close-btn">
-                        <button class="batsu"></button>
-                    </div>
-                    <!-- /.modal__close-btn -->
-                    <p class="modal__title">MY PAGE-ログイン</p>
-                    <form action="" method="post" id="loginForm">
-                        <dl>
-                            <dt class="modal__form-item">メールアドレス</dt>
-                            <dd>
-                                <input class="modal__form-box" type="email" name="mail_address" value=""
-                                    placeholder="例）example@example.com" required />
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt class="modal__form-item">パスワード</dt>
-                            <dd>
-                                <input class="modal__form-box" type="password" name="company" value=""
-                                    autocomplete="current-password" required />
-                            </dd>
-                        </dl>
-                    </form>
-                    <div class="modal__close-item">
-                      <button class="modal__close" value="" varia-label="Close modal" data-micromodal-close
-                      id="js-submit" disabled>
-                        サインイン
-                      </button>
-                    </div>
-                    <div class="modal__signUp">
-                        <a href="contact.html">新規登録はこちら</a>
-                    </div>
-                    <!-- /.modal__signup -->
-                </div>
-            </div>
-        </div>
+          </div>        
 
           <div class="p-nav__button"> 
             <a href="contact.html" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
@@ -141,7 +104,44 @@
             <a href="contact.html" class="c-button">エントリーはこちら</a><!-- /.mv__btn -->    
           </div>
         </div><!-- /.p-nav__buttons -->
-      </nav><!-- /.p-header__sp-nav -->      
+      </nav><!-- /.p-header__sp-nav -->   
+      <div id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <div class="modal__close-btn">
+                    <button class="batsu"></button>
+                </div>
+                <!-- /.modal__close-btn -->
+                <p class="modal__title">MY PAGE-ログイン</p>
+                <form action="" method="post" id="loginForm">
+                    <dl>
+                        <dt class="modal__form-item">メールアドレス</dt>
+                        <dd>
+                            <input class="modal__form-box" type="email" name="mail_address" value=""
+                                placeholder="例）example@example.com" required />
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="modal__form-item">パスワード</dt>
+                        <dd>
+                            <input class="modal__form-box" type="password" name="company" value=""
+                                autocomplete="current-password" required />
+                        </dd>
+                    </dl>
+                </form>
+                <div class="modal__close-item">
+                  <button class="modal__close" value="" varia-label="Close modal" data-micromodal-close
+                  id="js-submit" disabled>
+                    サインイン
+                  </button>
+                </div>
+                <div class="modal__signUp">
+                    <a href="contact.html">新規登録はこちら</a>
+                </div>
+                <!-- /.modal__signup -->
+            </div>
+        </div>
+    </div>   
     </div><!-- /.header__inner -->
   </header><!-- /.header -->
  

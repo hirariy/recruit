@@ -3,7 +3,7 @@
 .p-header {  
   height: rem(76);
   background: $white;
-  z-index: 100;
+  z-index: 60;
   position: fixed;  
   width: 100%;  
   transition: 0.3s; 
@@ -45,7 +45,7 @@
 }
 
 .p-header__pc-nav {
-  height: inherit;
+  // height: inherit;
   display: none;
   @include mq(md){
     display: block;

@@ -1,17 +1,18 @@
 jQuery(function ($) {
- 
+
   // ロゴの表示 ローディング
   $(window).on('load', function () {
     $("#splash").delay(1500).fadeOut('slow');
     $("#splash_logo").delay(1200).fadeOut('slow');
   });
- 
+
 
   // ヘッダー
   $(window).scroll(function () {
     const header = $('.p-header');
     const headerHeight = header.height();
     const scrollY = window.pageYOffset;
+    
 
     if (scrollY >= 100) {
       header.addClass('header--sticky');
@@ -27,6 +28,7 @@ jQuery(function ($) {
     $(".js-hamburger").toggleClass('is-active');
     $(".js-sp-nav").fadeToggle(300);
   });
+  
 
   // ナビゲーションリンクのクリックを処理
   $(".sp-nav__item a").click(function () {

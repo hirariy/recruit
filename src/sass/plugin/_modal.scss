@@ -4,13 +4,6 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: 615px) {
-  #modal-1 .modal__container {
-    width: 100%; /* 画面幅いっぱいに広げるか、適切な幅に調整する */
-    max-width: none; /* これにより最大幅の制限を解除します */
-  }
-}
-
 #modal-1 {
   display: none;
 }
@@ -32,11 +25,12 @@ body {
 .modal__container {
   background-color: #fff;
   padding: rem(10); 
-  width: rem(300);  
+  width: rem(500);  
   overflow-y: auto; 
+  margin: 0 rem(20);
   @include mq(md) {
     padding: rem(20); 
-    width: rem(500);  
+    width: rem(500);     
   } 
 }
 
