@@ -3,11 +3,11 @@
 .p-header {  
   height: rem(76);
   background: $white;
+  z-index: 100;
   z-index: 60;
   position: fixed;  
   width: 100%;  
-  transition: 0.3s; 
-  // padding-top: rem(10); 
+  transition: 0.3s;   
   top: 0; /* ヘッダーをページの上端に固定 */
   left: 0; /* ヘッダーの左端をページの左端に固定 */
   right: 0; /* ヘッダーの右端をページの右端に固定 */
@@ -15,18 +15,14 @@
     height: rem(100);
     background-color: transparent;  
   }
-
 }
-
 .p-header.header--sticky {
   color: $black;
   background-color: $white;  
 }
-
 .header--sticky .pc-nav__item a {
   color: $black;
 }
-
 .p-header__inner {
   height: inherit;
   display: flex;
@@ -37,7 +33,6 @@
     padding: rem(12) rem(20);    
   }
 }
-
 .p-header__drawer {
   @include mq(md) {
     display: none;
@@ -45,6 +40,7 @@
 }
 
 .p-header__pc-nav {
+  height: inherit;
   // height: inherit;
   display: none;
   @include mq(md){
@@ -53,13 +49,11 @@
     align-items: center;  
   }
 }
-
 .color-light {
   @include mq(md) {
     margin-right: rem(12);
   }
 }
-
 .header--sticky {
   position: fixed;
   top: 0;
@@ -69,7 +63,6 @@
   visibility: visible;
   animation: slideDown 0.3s ease-in-out;  
 }
-
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);
@@ -78,7 +71,6 @@
     transform: translateY(0%);
   }
 }
-
 :target {
   scroll-margin-top: rem(60);
 }

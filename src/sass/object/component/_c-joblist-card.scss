@@ -73,7 +73,8 @@
   height: rem(100); 
   padding: rem(20) rem(17);
   @include mq(md) {
-    padding: rem(30) rem(17);
+    padding: 5% 4%;
+    width: 74%;
   }
 }
   

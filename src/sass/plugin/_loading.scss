@@ -1,6 +1,5 @@
 @use "global" as *;
 
-
 /* Loading背景画面設定　*/
 #splash {
   /*fixedで全面に固定*/
@@ -11,6 +10,7 @@ z-index: 999;
 background: $orange;
 text-align:center;
 color:#fff;
+top: 0;
 }
 
 /* Loading画像中央配置　*/
@@ -23,7 +23,10 @@ transform: translate(-50%, -50%);
 
 /* Loading アイコンの大きさ設定　*/
 #splash_logo img {
-width:rem(150);
+width:rem(75);
+@include mq(md) {
+  width:rem(150);
+}
 }
 
 /* fadeUpをするアイコンの動き */

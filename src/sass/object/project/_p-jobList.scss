@@ -30,8 +30,9 @@
     margin-top: rem(69);
     position: relative; // 相対位置指定
     width: 100vw;
-    padding: 0;
+    padding: 0;    
   }
+ 
 }
 
 .p-jobList__cards {
@@ -45,12 +46,12 @@
     display: grid;     
     grid-template-columns: repeat(2, 1fr);
     gap: rem(88) rem(98);
-    max-width: rem(1110); // 幅の最大値を指定  
-    padding: rem(58);
-    padding: rem(58) rem(58) rem(171);
+    max-width: rem(1542); // 幅の最大値を指定  
+    // padding: rem(58);
+    padding: 5% 18% 10% 6%;
     background: #F9F9F9; // カード部分に背景色を付ける
     position: relative; // 絶対位置指定
-    right: calc(57% - min(57vw,650px));    
+    right: calc(49% - min(49vw,650px));    
   } 
 }
 
