@@ -60,7 +60,7 @@ $(".modal__btn").click(function () {
 });
 
 // 閉じるボタンとオーバーレイの処理
-$('#modal__close-btn').click(function () {
+$('.batsu').click(function () {
   // ✖印がクリックされたときだけモーダルを閉じる
   MicroModal.close('modal-1');
 });
@@ -70,8 +70,6 @@ $(".p-nav__button .c-button, .sp-nav__btns .c-button").click(function () {
   $(".js-hamburger").removeClass('is-active');
   $(".js-sp-nav").fadeOut(300);
 });
-
-// 他のイベントハンドラは変更なし
 
 
 

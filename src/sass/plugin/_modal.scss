@@ -3,6 +3,14 @@
 body {
   margin: 0;
 }
+
+@media screen and (max-width: 615px) {
+  #modal-1 .modal__container {
+    width: 100%; /* 画面幅いっぱいに広げるか、適切な幅に調整する */
+    max-width: none; /* これにより最大幅の制限を解除します */
+  }
+}
+
 #modal-1 {
   display: none;
 }
@@ -49,8 +57,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 5px; /* 棒の幅（太さ） */
-  height: 30px; /* 棒の高さ */
+  width: rem(5); /* 棒の幅（太さ） */
+  height: rem(30); /* 棒の高さ */
   background: #333;
 }
  

@@ -25,9 +25,9 @@
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>  
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>  
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script defer src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
@@ -71,8 +71,7 @@
         <div class="p-nav__buttons">         
           <div class="wrapper">
             <button class="modal__btn c-button color-light" data-micromodal-trigger="modal-1" role="button">MY PAGEはこちら</button>
-          </div>         
-
+          </div> 
           <div id="modal-1" aria-hidden="true">
             <div class="modal__overlay" tabindex="-1" data-micromodal-close>
                 <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
@@ -98,8 +97,10 @@
                         </dl>
                     </form>
                     <div class="modal__close-item">
-                        <input class="modal__close" value="サインイン" varia-label="Close modal" data-micromodal-close
-                            id="js-submit" disabled />
+                      <button class="modal__close" value="" varia-label="Close modal" data-micromodal-close
+                      id="js-submit" disabled>
+                        サインイン
+                      </button>                        
                     </div>
                     <div class="modal__signUp">
                         <a href="contact.html">新規登録はこちら</a>
@@ -107,9 +108,7 @@
                     <!-- /.modal__signup -->
                 </div>
             </div>
-        </div>
-
-
+         </div>
           <div class="p-nav__button">             
             <a href="contact.html" class="c-button">エントリーはこちら</a>
           </div>
